@@ -13,7 +13,7 @@
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100">
     <main class="container mx-auto px-4 sm:px-6 lg:px-8">
-        {{ $slot }}
+        @yield('content')
     </main>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
