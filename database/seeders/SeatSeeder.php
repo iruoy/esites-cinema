@@ -15,7 +15,7 @@ class SeatSeeder extends Seeder
     public function run(): void
     {
         Seat::factory()
-            ->count(10)
+            ->count(350)
             ->create();
     }
 }
