@@ -1,14 +1,16 @@
 <div class="py-8">
-    <div class="flex gap-4">
+    <form class="flex gap-4" wire:submit.prevent="submit">
         <h1 class="text-3xl font-bold">Seats</h1>
-        <form class="flex gap-4" wire:submit.prevent="submit">
-            <label for="reserve" class="sr-only">Email</label>
-            <input type="number" name="reserve" id="reserve" class="w-20 border-2 border-gray-200" wire:model="reserve">
-            @error('reserve') <span class="error">{{ $message }}</span> @enderror
 
-            <button type="submit" class="px-4 py-2 bg-white border-2 border-gray-200">Reserve</button>
-        </form>
-    </div>
+        <label for="reserve" class="sr-only">Email</label>
+        <input type="text" inputmode="numeric" name="reserve" id="reserve" class="w-20 border-2 @error('reserve') border-red-500 @else border-gray-200 @enderror" wire:model="reserve">
+
+        <button type="submit" class="px-4 py-2 bg-white border-2 border-gray-200">Reserve</button>
+
+        @error('reserve')
+            <p class="text-red-500">{{ $message }}</p>
+        @enderror
+    </form>
 
     <div class="mt-8 bg-white border-2 border-gray-200">
         <div class="px-4 py-5 sm:p-6">

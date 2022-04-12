@@ -10,8 +10,12 @@ use Livewire\Component;
 class Seats extends Component
 {
     public array $highlighted;
-    public int $reserve;
+    public int|string $reserve;
     public Collection $seats;
+
+    protected array $rules = [
+        'reserve' => 'required|int',
+    ];
 
     public function render(): View
     {
@@ -35,6 +39,8 @@ class Seats extends Component
 
     private function findSeats(): void
     {
+        $this->validate();
+
         $options = [];
 
         $consecutive = [];
