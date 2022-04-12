@@ -14,7 +14,7 @@ class SeatFactory extends Factory
     public function definition(): array
     {
         return [
-            'taken' => $this->faker->boolean
+            'taken' => $this->faker->boolean(25)
         ];
     }
 }
