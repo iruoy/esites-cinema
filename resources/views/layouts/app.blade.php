@@ -7,7 +7,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite(['resources/css/app.css'])
     @livewireStyles
 </head>
 <body class="font-sans antialiased">
@@ -16,7 +16,6 @@
         {{ $slot }}
     </main>
 
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
     @livewireScripts
 </div>
 </body>
