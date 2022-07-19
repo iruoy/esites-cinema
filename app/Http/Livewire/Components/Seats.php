@@ -10,7 +10,9 @@ use Livewire\Component;
 class Seats extends Component
 {
     public array $highlighted;
+
     public int|string $reserve;
+
     public Collection $seats;
 
     protected array $rules = [
@@ -57,6 +59,7 @@ class Seats extends Component
                 // if the requested number of seats is low enough we can stop here
                 if (count($consecutive) === $this->reserve) {
                     $this->highlighted = $consecutive;
+
                     return;
                 }
             }
@@ -70,6 +73,7 @@ class Seats extends Component
         // if there are not enough seats available, show no options
         if ($this->reserve > count($options, COUNT_RECURSIVE) - count($options)) {
             $this->highlighted = [];
+
             return;
         }
 

@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Seat;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Seat>
+ * @extends Factory<Seat>
  */
 class SeatFactory extends Factory
 {
@@ -17,7 +18,7 @@ class SeatFactory extends Factory
     public function definition(): array
     {
         return [
-            'taken' => fake()->boolean(25)
+            'taken' => fake()->boolean(25),
         ];
     }
 }

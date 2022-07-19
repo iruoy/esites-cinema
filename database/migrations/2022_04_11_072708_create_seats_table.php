@@ -6,25 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up(): void
+    public function up()
     {
-        Schema::create('seats', static function (Blueprint $table) {
+        Schema::create('seats', function (Blueprint $table) {
             $table->id();
             $table->boolean('taken')->default(false);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('seats');
     }
