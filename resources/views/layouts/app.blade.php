@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="description" content="E-sites code challenge backend">
 
     @vite(['resources/css/app.css'])
     @livewireStyles
